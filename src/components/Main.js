@@ -2,41 +2,60 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import pic01 from '../images/pic01.jpg'
-import pic02 from '../images/pic02.jpg'
+import pic02 from '../images/pic02.png'
 import pic03 from '../images/pic03.jpg'
+import pic04 from '../images/pic04.png'
+import marcel from '../images/marcel.jpg'
+import costa from '../images/costa.jpg'
+
+
 
 class Main extends React.Component {
   render() {
 
-    let close = <div className="close" onClick={() => {this.props.onCloseArticle()}}></div>
+    const close = <div className="close" onClick={() => {this.props.onCloseArticle()}}></div>
+    const link = <a href={'https://medium.com/blockspace-ch/blockspace-app-update-8b0e94085a7b'}>click here</a>
+    const ios = <a href={'https://itunes.apple.com/gb/app/blockspace-crypto-markets/id1348078159'}>iOS</a>
+    const android = <a href={'https://play.google.com/store/apps/details?id=ch.blockspace.blockspace'}>Android</a>
 
     return (
       <div ref={this.props.setWrapperRef} id="main" style={this.props.timeout ? {display: 'flex'} : {display: 'none'}}>
 
         <article id="intro" className={`${this.props.article === 'intro' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">Intro</h2>
+          <span className="image main"><img src={pic03} alt="" /></span>
+          <p>Constantin and Marcel are world travellers that love to hack around with the latest Blockchain tech, especially EOS, and help others to do so.</p>
+          <p>If they are not at a big Blockchain event or hackathon near you, they probably rented a house at the beach for a 'work hard, enjoy hard' work-cation.</p>
           <span className="image main"><img src={pic01} alt="" /></span>
-          <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#work">awesome work</a>.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
           {close}
         </article>
 
         <article id="work" className={`${this.props.article === 'work' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">Work</h2>
           <span className="image main"><img src={pic02} alt="" /></span>
-          <p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
-          <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
+          <p>Recently Blockspace published their app to compare and track crypto currencies in a unique way.
+Since they weren't satisfied with current crypto market apps, they programmed their own.</p>
+          <p>The Blockspace app let's you compare crypto coins in a unique and efficient way. Checking graphs and sharing them with your friends, has never been that easy before. Read about our latest update {link}</p>
+          <p>Available for {ios} and {android}</p>
+
+          <span className="image main"><img src={pic04} alt="" /></span>
           {close}
         </article>
 
         <article id="about" className={`${this.props.article === 'about' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">About</h2>
-          <span className="image main"><img src={pic03} alt="" /></span>
-          <p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>
+          <span className="image main"><img src={costa} alt="" /></span>
+          <p>Constantin started researching blockchains and trading the crypto markets in 2015, since then he advises about the technology and periodically manages crypto portfolios for selected clients.</p>
+          <p>Constantin is currently pursuing a MSc in Digital Currency where he focuses on Proof of Stake research, prior he completed a BSc in Banking and International Finance with a thesis about Blockchain's Potential for Financial Disintermediation.</p>
+          <p>In early 2017 Constantin expanded his skills in the field of computer science, which he now uses to crypto analytics tools and smart contracts for his startup Blockspace. Previously Constantin has gained experience within commercial banking and FinTech startups.</p>
+          <span className="image main"><img src={marcel} alt="" /></span>
+          <p>Marcel has visited 20 countries, lived on 3 continents and speaks 4 languages. Everything that brings progress and freedom fascinates him. He writes Smart Contracts for the EOS Blockchain, Apps, Websites, Servers and consults Blockchain start-ups.</p>
+          <p>He publishes his open source work to Github. Like recently an improved graph library for apps, and a Docker package to spin an EOS node within a few clicks to query transaction data for businesses.</p>
+          <p>Because of his help, 200k+ users can use EOS in the 'Edge Wallet'. Currently Marcel works on a Website to strengthen democracy on the EOS Blockchain, also called 'user proposals'.</p>
           {close}
         </article>
 
-        <article id="contact" className={`${this.props.article === 'contact' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
+        {/* <article id="contact" className={`${this.props.article === 'contact' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">Contact</h2>
           <form method="post" action="#">
             <div className="field half first">
@@ -63,7 +82,7 @@ class Main extends React.Component {
             <li><a href="#" className="icon fa-github"><span className="label">GitHub</span></a></li>
           </ul>
           {close}
-        </article>
+        </article> */}
 
       </div>
     )
